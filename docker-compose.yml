@@ -1,0 +1,17 @@
+api:
+    build: "./back"
+    expose:
+        - "5000"
+    volumes:
+        - "./back:/usr/src/app/"
+
+front:
+    image: nginx
+    ports:
+        - "80:80"
+    volumes:
+        - "./deploy/sparkup.nginx.conf:/etc/nginx/conf.d/default.conf"
+        - "./deploy/nginx.conf:/etc/nginx/nginx.conf"
+        - "./front:/var/www/"
+    links:
+        - api
