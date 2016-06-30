@@ -4,8 +4,8 @@
             <a class="navbar-brand navbar-brand-center" href="#" data-ui-sref="root.home">
                 <span class="navbar-brand-text hidden-xs">SparkUp</span>
             </a>
-            <a class="navbar-brand navbar-brand-center" data-ui-sref="root.city({lat: city.coord.lat, lon: city.coord.lon})" ng-if="city">
-                <img ng-src="http://openweathermap.org/img/w/{{ city.weather[0].icon }}.png" style="height: 30px; display: inline-block; margin-top: -5px;" /> {{ city.main.temp }} C° - {{ city.name }}
+            <a class="navbar-brand navbar-brand-center header-weather" data-ui-sref="root.city({lat: city.coord.lat, lon: city.coord.lon})" ng-if="city">
+                <img ng-src="http://openweathermap.org/img/w/{{ city.weather[0].icon }}.png" /> {{ city.main.temp }} C° - {{ city.name }}
             </a>
         </div>
     </nav>
