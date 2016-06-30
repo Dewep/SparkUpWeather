@@ -1,0 +1,10 @@
+<ng-map id="map" center="46.90, 1.70" zoom="6" default-style="false" on-bounds-changed="boundsChanged()" map-initialized="initMap(map)">
+    <marker id='marker-{{ c.id }}' position="{{ c.position }}" ng-repeat="c in cities" on-click="showDetail(c)" icon="http://openweathermap.org/img/w/{{c.icon}}.png">
+    </marker>
+
+    <info-window id="info-window">
+        <div ng-non-bindable="">
+            <a ui-sref="root.city({lat: city.position[0], lon: city.position[1]})">{{ city.name }} - {{ city.temp }} C°</a>
+        </div>
+    </info-window>
+</ng-map>
