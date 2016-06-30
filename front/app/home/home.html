@@ -1,3 +1,5 @@
+<h1>SparkUp Weather Demo</h1>
+
 <ng-map id="map" center="46.90, 1.70" zoom="6" default-style="false" on-bounds-changed="boundsChanged()" map-initialized="initMap(map)">
     <marker id='marker-{{ c.id }}' position="{{ c.position }}" ng-repeat="c in cities" on-click="showDetail(c)" icon="http://openweathermap.org/img/w/{{c.icon}}.png">
     </marker>

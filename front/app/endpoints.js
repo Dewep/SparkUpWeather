@@ -14,4 +14,8 @@
         return $resource('/api/weather/bbox/:NE_lat,:NE_lon,:SW_lat,:SW_lon,:zoom/');
     });
 
+    angular.module('app.services').factory('WeatherTwitter', function($resource) {
+        return $resource('/api/weather/twitter/:lat,:lon/');
+    });
+
 })();

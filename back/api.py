@@ -3,6 +3,7 @@ from flask_restful import Api
 from werkzeug.routing import FloatConverter as BaseFloatConverter
 
 from api.weather import APIWeatherList, APIWeatherCity, APIWeatherCoordinates, APIWeatherBbox
+from api.twitter import APIWeatherTwitter
 
 
 class CoordinateConverter(BaseFloatConverter):
@@ -19,6 +20,7 @@ api.add_resource(APIWeatherList, '/api/weather/')
 api.add_resource(APIWeatherCity, '/api/weather/city/<string:city_name>/')
 api.add_resource(APIWeatherCoordinates, '/api/weather/coordinates/<coordinate:lat>,<coordinate:lon>/')
 api.add_resource(APIWeatherBbox, '/api/weather/bbox/<coordinate:NE_lat>,<coordinate:NE_lon>,<coordinate:SW_lat>,<coordinate:SW_lon>,<int:zoom>/')
+api.add_resource(APIWeatherTwitter, '/api/weather/twitter/<coordinate:lat>,<coordinate:lon>/')
 
 
 if __name__ == '__main__':
